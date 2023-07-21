@@ -23,7 +23,7 @@ REGISTER_OP("FarthestPointSample")
     TF_RETURN_IF_ERROR(c->GetAttr("npoint", &npoint));
     ::tensorflow::shape_inference::ShapeHandle output = c->MakeShape({c->Dim(dims1, 0), npoint});
     c->set_output(0, output);
-    return Status::OK();
+    return OkStatus();
   });
 
 void farthestpointsamplingLauncher(int b,int n,int m,const float * inp,float * temp,int * out);
